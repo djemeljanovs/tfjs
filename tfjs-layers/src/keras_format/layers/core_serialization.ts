@@ -14,6 +14,7 @@ import {ConstraintSerialization} from '../constraint_config';
 import {InitializerSerialization} from '../initializer_config';
 import {RegularizerSerialization} from '../regularizer_config';
 import {BaseLayerSerialization, LayerConfig} from '../topology_config';
+import {DenseFeaturesLayerSerialization} from "./dense_features_serialization";
 
 export interface DropoutLayerConfig extends LayerConfig {
   rate: number;
@@ -81,8 +82,8 @@ export type MaskingLayerSerialization =
 
 // Update coreLayerClassNames below in concert with this.
 export type CoreLayerSerialization =
-    DropoutLayerSerialization|DenseLayerSerialization|FlattenLayerSerialization|
-    ActivationLayerSerialization|RepeatVectorLayerSerialization|
+    DropoutLayerSerialization|DenseFeaturesLayerSerialization|DenseLayerSerialization|
+    FlattenLayerSerialization|ActivationLayerSerialization|RepeatVectorLayerSerialization|
     ReshapeLayerSerialization|PermuteLayerSerialization|
     MaskingLayerSerialization;
 

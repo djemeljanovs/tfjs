@@ -19,10 +19,12 @@ import {normalizationLayerClassNames, NormalizationLayerSerialization} from './n
 import {paddingLayerClassNames, PaddingLayerSerialization} from './padding_serialization';
 import {poolingLayerClassNames, PoolingLayerSerialization} from './pooling_serialization';
 import {recurrentLayerClassNames, RecurrentLayerSerialization} from './recurrent_serialization';
+import {denseFeaturesLayerClassNames, DenseFeaturesLayerSerialization} from "./dense_features_serialization";
 
 export type LayerSerialization = AdvancedActivationLayerSerialization|
     ConvolutionalDepthwiseLayerSerialization|ConvolutionalLayerSerialization|
-    CoreLayerSerialization|EmbeddingLayerSerialization|MergeLayerSerialization|
+    CoreLayerSerialization|DenseFeaturesLayerSerialization|
+    EmbeddingLayerSerialization|MergeLayerSerialization|
     NormalizationLayerSerialization|PaddingLayerSerialization|
     PoolingLayerSerialization|RecurrentLayerSerialization|
     InputLayerSerialization;
@@ -37,7 +39,8 @@ export type LayerClassName = LayerSerialization['class_name'];
 export const layerClassNames: LayerClassName[] = [
   ...advancedActivationLayerClassNames,
   ...convolutionalDepthwiseLayerClassNames, ...convolutionalLayerClassNames,
-  ...coreLayerClassNames, ...embeddingLayerClassNames, ...mergeLayerClassNames,
+  ...coreLayerClassNames, ...denseFeaturesLayerClassNames,
+  ...embeddingLayerClassNames, ...mergeLayerClassNames,
   ...normalizationLayerClassNames, ...paddingLayerClassNames,
   ...poolingLayerClassNames, ...recurrentLayerClassNames,
   ...inputLayerClassNames
